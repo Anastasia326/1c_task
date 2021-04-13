@@ -7,7 +7,7 @@ AllCourses::AllCourses() {
     courses_level_.resize(6);
 }
 
-//нормализация курсов по уровням и удаление дублирующихся
+//нормализация курсов по уровням и удаление дублирующихся, а так же сортирует курсы по id
 void AllCourses::Normalize() {
     for (auto & i : courses_level_) {
         std::set<int> unique_id;
@@ -21,7 +21,7 @@ void AllCourses::Normalize() {
     }
 }
 
-//добавляет курс в набор курсов
+//добавляет курс в набор
 void AllCourses::AddCourse(int lvl, int id) {
     if (lvl < 0 || lvl > 5) {
         std::cout << "wrong level\n";

@@ -6,11 +6,12 @@
 #include <utility>
 
 //функция возвращает набор или наборы курсов, необходимых для закрытия одного конкретного курса
-bool Solution::Dfs(const Information &cur_info, AllCourses &cur_all_courses,
+bool Finder::Dfs(const Information &cur_info, AllCourses &cur_all_courses,
                    std::vector<AllCourses> &all_courses) {
     //рекурсивный спуск для добавления необходимых курсов
     if (!cur_info.courses.empty()) {
         for (auto req_id : cur_info.courses) {
+            //делаем ветвление если есть выбор курса
             if (hierarchy_[req_id].courses.size() > 1) {
                 for (int number_of_variants = 0;
                      number_of_variants < cur_info.courses.size(); ++number_of_variants) {
@@ -28,9 +29,9 @@ bool Solution::Dfs(const Information &cur_info, AllCourses &cur_all_courses,
     return true;
 }
 
-//функция возвращает все варианты набора курсов, необходимых для закрытия данных третьих и пятого
+//функция возвращает все варианты набора курсов(учебную траекторию), необходимых для закрытия данных третьих и пятого
 std::vector<AllCourses>
-Solution::Round(int number_of_5_course, const std::vector<int> &number_of_3_course) {
+Finder::Round(int number_of_5_course, const std::vector<int> &number_of_3_course) {
     std::vector<AllCourses> result;
     AllCourses first_all_course;
     first_all_course.AddCourse(5, number_of_5_course);
@@ -43,8 +44,8 @@ Solution::Round(int number_of_5_course, const std::vector<int> &number_of_3_cour
     return result;
 }
 
-//функция выбирает наборы курсов для закрытия всех нужных курсов с минимальным числом курсов в нем
-std::vector<AllCourses> Solution::ChooseMin(std::vector<AllCourses> &all_variants) {
+//функция выбирает наборы курсов для закрытия всех нужных курсов с минимальным числом в нем
+std::vector<AllCourses> Finder::ChooseMin(std::vector<AllCourses> &all_variants) {
     std::vector<int> sums(all_variants.size());
     std::vector<AllCourses> answer;
     for (int i = 0; i < sums.size(); ++i) {
@@ -57,6 +58,7 @@ std::vector<AllCourses> Solution::ChooseMin(std::vector<AllCourses> &all_variant
             min_size = sum;
         }
     }
+    //если несколько минимальных учебных траекторий есть
     for (int i = 0; i < sums.size(); ++i) {
         if (sums[i] == min_size) {
             index_of_min.push_back(i);
@@ -64,7 +66,7 @@ std::vector<AllCourses> Solution::ChooseMin(std::vector<AllCourses> &all_variant
     }
 
     answer.reserve(index_of_min.size());
-for (auto id : index_of_min) {
+    for (auto id : index_of_min) {
         answer.push_back(all_variants[id]);
     }
     return answer;
@@ -72,7 +74,7 @@ for (auto id : index_of_min) {
 
 //функция возвращает результат - набор курсов с максимальным количеством приорететных курсов
 AllCourses
-Solution::Result(const std::vector<AllCourses> &good_variants,
+Finder::Result(const std::vector<AllCourses> &good_variants,
                  const std::vector<std::pair<int, int>> &priorities) {
     std::sort(priorities.begin(), priorities.end(), [](auto &one, auto &another) {
         return one.first < another.first;
@@ -94,5 +96,5 @@ Solution::Result(const std::vector<AllCourses> &good_variants,
     return good_variants[index_of_best];
 }
 
-Solution::Solution(std::vector<Information> hierarchy) : hierarchy_(std::move(hierarchy)){
+Finder::Finder(std::vector<Information> hierarchy) : hierarchy_(std::move(hierarchy)){
 }

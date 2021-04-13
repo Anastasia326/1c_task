@@ -3,8 +3,8 @@
 //
 #include "AllCourses.hpp"
 
-#ifndef INC_1C_TASK_SOLUTION_HPP
-#define INC_1C_TASK_SOLUTION_HPP
+#ifndef INC_1C_TASK_Finder_HPP
+#define INC_1C_TASK_Finder_HPP
 struct Information {
     int level;
     int id;
@@ -13,9 +13,9 @@ struct Information {
 
 };
 
-struct Solution {
+struct Finder {
     std::vector<Information> hierarchy_;
-    explicit Solution(std::vector<Information> hierarchy);
+    explicit Finder(std::vector<Information> hierarchy);
     bool Dfs(const Information &cur_info, AllCourses &cur_all_courses,
              std::vector<AllCourses> &all_courses);
 
@@ -29,4 +29,4 @@ struct Solution {
            const std::vector<std::pair<int, int>> &priorities);
 };
 
-#endif //INC_1C_TASK_SOLUTION_HPP
+#endif //INC_1C_TASK_Finder_HPP

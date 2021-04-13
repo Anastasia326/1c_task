@@ -26,9 +26,9 @@ int main() {
             //считываем нужную информацию, обрабатываем файл
         }
     }
-    Solution solution = Solution(information);
-    std::vector<AllCourses> all_varients = solution.Round(number_of_5_course, number_of_3_course);
-    std::vector<AllCourses> min_var = solution.ChooseMin(all_varients);
+    Finder solution = Finder(information);
+    std::vector<AllCourses> all_variants = solution.Round(number_of_5_course, number_of_3_course);
+    std::vector<AllCourses> min_var = solution.ChooseMin(all_variants);
     AllCourses result = solution.Result(min_var, priorities);
     //в AllCourses лежит, по сути, ответ
     //дальше надо будет только по id определить названия курса и посмотреть какой курс когда закрывать

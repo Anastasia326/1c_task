@@ -13,6 +13,8 @@
 #define INC_1C_TASK_ALLCOURSES_HPP
 
 //данный класс представляет собой набор курсов, разделенных по уровню
+//это учебная траектория по факту
+
 class AllCourses {
     std::vector<std::vector<int>> courses_level_;
 public:
