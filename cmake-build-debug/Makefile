@@ -142,6 +142,60 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/build
 .PHONY : 1c_task/fast
 
+AllCourses.o: AllCourses.cpp.o
+
+.PHONY : AllCourses.o
+
+# target to build an object file
+AllCourses.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/AllCourses.cpp.o
+.PHONY : AllCourses.cpp.o
+
+AllCourses.i: AllCourses.cpp.i
+
+.PHONY : AllCourses.i
+
+# target to preprocess a source file
+AllCourses.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/AllCourses.cpp.i
+.PHONY : AllCourses.cpp.i
+
+AllCourses.s: AllCourses.cpp.s
+
+.PHONY : AllCourses.s
+
+# target to generate assembly for a file
+AllCourses.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/AllCourses.cpp.s
+.PHONY : AllCourses.cpp.s
+
+Solution.o: Solution.cpp.o
+
+.PHONY : Solution.o
+
+# target to build an object file
+Solution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/Solution.cpp.o
+.PHONY : Solution.cpp.o
+
+Solution.i: Solution.cpp.i
+
+.PHONY : Solution.i
+
+# target to preprocess a source file
+Solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/Solution.cpp.i
+.PHONY : Solution.cpp.i
+
+Solution.s: Solution.cpp.s
+
+.PHONY : Solution.s
+
+# target to generate assembly for a file
+Solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1c_task.dir/build.make CMakeFiles/1c_task.dir/Solution.cpp.s
+.PHONY : Solution.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -178,6 +232,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 1c_task"
+	@echo "... AllCourses.o"
+	@echo "... AllCourses.i"
+	@echo "... AllCourses.s"
+	@echo "... Solution.o"
+	@echo "... Solution.i"
+	@echo "... Solution.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

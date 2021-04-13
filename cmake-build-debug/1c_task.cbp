@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/tasya/CLionProjects/1c_task/AllCourses.cpp">
+			<Option target="1c_task"/>
+		</Unit>
+		<Unit filename="/home/tasya/CLionProjects/1c_task/AllCourses.hpp">
+			<Option target="1c_task"/>
+		</Unit>
+		<Unit filename="/home/tasya/CLionProjects/1c_task/Solution.cpp">
+			<Option target="1c_task"/>
+		</Unit>
+		<Unit filename="/home/tasya/CLionProjects/1c_task/Solution.hpp">
+			<Option target="1c_task"/>
+		</Unit>
 		<Unit filename="/home/tasya/CLionProjects/1c_task/main.cpp">
 			<Option target="1c_task"/>
 		</Unit>

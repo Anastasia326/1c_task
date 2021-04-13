@@ -3,4 +3,4 @@ project(1c_task)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(1c_task main.cpp)
+add_executable(1c_task main.cpp AllCourses.hpp AllCourses.cpp Solution.cpp Solution.hpp)
